@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.10">
+  <GVL Name="GVL_HOIST" Id="{500fc49a-5778-4398-871c-cba9521e128f}">
+    <Declaration><![CDATA[
+VAR_GLOBAL
+	{attribute 'OPC.UA.DA' := '1'} 
+	stHoistOpcToPlc				: ARRAY[1..cHoistCount] OF HOIST_REF_OpcToPlc;
+	{attribute 'OPC.UA.DA' := '1'} 
+	stHoistPlcToOpc				: ARRAY[1..cHoistCount] OF HOIST_REF_PlcToOpc;
+END_VAR
+VAR_GLOBAL CONSTANT
+	cHoistCount			: UINT:=255;
+END_VAR
+
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

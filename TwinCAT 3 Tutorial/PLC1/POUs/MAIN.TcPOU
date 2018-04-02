@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.10">
+  <POU Name="MAIN" Id="{34afc99c-f6a3-4bb8-b8ff-46afd64ffeec}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	{attribute 'OPC.UA.DA' := '1'} 
+	increment:INT;
+	GrindingWheelMS: BOOL;
+	{attribute 'OPC.UA.DA' := '1'} 
+	GrindingWheelMS2: BOOL;
+	{attribute 'OPC.UA.DA' := '1'} 
+	ex_struct: DUT;
+	{attribute 'OPC.UA.DA' := '1'}
+	arr1 : ARRAY [1..256] OF INT;
+	{attribute 'OPC.UA.DA' := '1'}
+	count: INT;
+	counter: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[increment:=increment+1;
+GrindingWheelMS:=TRUE;
+GrindingWheelMS2:=FALSE;
+ex_struct.aPoint1:=2;
+ex_struct.aPoint2:=5;
+ex_struct.aPoint3:=6;
+ex_struct.aPoint4:=12;
+ex_struct.aEndPoint:=24;
+ex_struct.aStartPoint:=1;
+
+counter := counter + 1;
+arr1[counter] := counter + increment;
+stHoistPlcToOpc[counter].ActPos := increment;
+IF counter > 254 THEN
+	counter := 0;
+END_IF;
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="33" Count="4" />
+      <LineId Id="55" Count="2" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="105" Count="2" />
+      <LineId Id="32" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

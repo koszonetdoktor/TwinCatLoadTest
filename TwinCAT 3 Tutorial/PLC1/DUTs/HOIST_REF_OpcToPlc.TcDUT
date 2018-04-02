@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.7">
+  <DUT Name="HOIST_REF_OpcToPlc" Id="{d8273e58-e8d1-4961-9db7-4ea1873345f6}">
+    <Declaration><![CDATA[TYPE HOIST_REF_OpcToPlc :
+STRUCT
+	DestPos	:	REAL;
+	DestVel	:	REAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
